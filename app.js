@@ -11,7 +11,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-async function scraper(channel) {
+function scraper(channel) {
     let last_id;
 
     while (true) {
