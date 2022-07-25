@@ -1,9 +1,9 @@
 //Code written by TheDoctor :D
-const { Client, Intents, Channel, MessageManager } = require('discord.js');
+const { Client, GatewayIntentBits, Channel, MessageManager } = require('discord.js');
 const client = new Client({ 
     intents: [
-        Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages
     ] 
 });
 
@@ -15,7 +15,7 @@ async function scraper(channel) {
     let last_id;
 
     while (true) {
-        const options = { limit: 100};
+        const options = { limit: 100 };
         if (last_id) {
             options.before = last_id;
         }
